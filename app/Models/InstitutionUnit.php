@@ -1,0 +1,70 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+
+class InstitutionUnit extends Model
+{
+    use HasFactory;
+
+    protected $fillable = [
+        'institution_id',
+        'parent_id',
+        'slug',
+        'sort_order',
+        'is_active',
+    ];
+
+    protected $casts = [
+        'is_active' => 'boolean',
+        'sort_order' => 'integer',
+    ];
+
+    public function institution(): BelongsTo
+    {
+        return $this->belongsTo(Institution::class, 'institution_id');
+    }
+
+    public function parent(): BelongsTo
+    {
+        return $this->belongsTo(InstitutionUnit::class, 'parent_id');
+    }
+
+    public function children(): HasMany
+    {
+        return $this->hasMany(InstitutionUnit::class, 'parent_id')->orderBy('sort_order');
+    }
+
+    public function translations(): HasMany
+    {
+        return $this->hasMany(InstitutionUnitTranslation::class, 'institution_unit_id');
+    }
+
+    public function services(): HasMany
+    {
+        return $this->hasMany(InstitutionService::class, 'unit_id')->orderBy('sort_order');
+    }
+
+    public function officers(): HasMany
+    {
+        return $this->hasMany(Officer::class, 'unit_id')->orderBy('sort_order');
+    }
+
+    public function documents(): HasMany
+    {
+        return $this->hasMany(InstitutionDocument::class, 'unit_id')->orderBy('sort_order');
+    }
+
+    public function translationFor(?string $locale = null): ?InstitutionUnitTranslation
+    {
+        $locale = $locale ?? app()->getLocale();
+
+        return $this->translations->firstWhere('locale', $locale)
+            ?? $this->translations->firstWhere('locale', 'en')
+            ?? $this->translations->first();
+    }
+}

@@ -1,0 +1,35 @@
+<?php
+
+return [
+    'page_title' => 'Travel Guide — Explore Laggala',
+    'badge_plan' => 'Plan Your Trip',
+    'hero_title' => 'Laggala Travel Guide',
+    'hero_subtitle' => 'Everything you need to know before and during your visit — from getting here to local customs, packing tips and safety advice.',
+    'essential_reads' => 'Essential Reads',
+    'read_more' => 'Read more →',
+    'all_guides' => 'All Travel Guides',
+    'no_guides' => 'No Travel Guides Yet',
+    'no_guides_desc' => 'Guides will be added by our team soon. Check back later!',
+    'quick_info' => 'Quick Info',
+    'category' => 'Category',
+    'author' => 'Author',
+    'published' => 'Published',
+    'related_guides' => 'Related Guides',
+    'back_to_all' => 'All Travel Guides',
+    'home' => 'Home',
+    'featured' => 'Featured',
+
+    // Categories
+    'cat_getting_here' => 'Getting Here',
+    'cat_accommodation' => 'Accommodation',
+    'cat_food_drink' => 'Food & Drink',
+    'cat_safety_tips' => 'Safety Tips',
+    'cat_cultural_etiquette' => 'Cultural Etiquette',
+    'cat_packing_list' => 'Packing List',
+    'cat_best_time_to_visit' => 'Best Time to Visit',
+    'cat_local_customs' => 'Local Customs',
+    'cat_transportation' => 'Transportation',
+    'cat_money_budget' => 'Money & Budget',
+    'cat_health_medical' => 'Health & Medical',
+    'cat_general' => 'General Guide',
+];

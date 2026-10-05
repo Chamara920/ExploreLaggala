@@ -1,0 +1,44 @@
+<?php
+
+namespace App\Filament\Resources\TravelGuides\Schemas;
+
+use Filament\Infolists\Components\IconEntry;
+use Filament\Infolists\Components\ImageEntry;
+use Filament\Infolists\Components\TextEntry;
+use Filament\Schemas\Schema;
+
+class TravelGuideInfolist
+{
+    public static function configure(Schema $schema): Schema
+    {
+        return $schema
+            ->components([
+                TextEntry::make('title'),
+                TextEntry::make('slug'),
+                TextEntry::make('category'),
+                TextEntry::make('summary')
+                    ->placeholder('-')
+                    ->columnSpanFull(),
+                TextEntry::make('content')
+                    ->columnSpanFull(),
+                ImageEntry::make('cover_image')
+                    ->placeholder('-'),
+                TextEntry::make('status'),
+                IconEntry::make('featured')
+                    ->boolean(),
+                TextEntry::make('sort_order')
+                    ->numeric(),
+                TextEntry::make('author.name')
+                    ->label('Author'),
+                TextEntry::make('published_at')
+                    ->dateTime()
+                    ->placeholder('-'),
+                TextEntry::make('created_at')
+                    ->dateTime()
+                    ->placeholder('-'),
+                TextEntry::make('updated_at')
+                    ->dateTime()
+                    ->placeholder('-'),
+            ]);
+    }
+}

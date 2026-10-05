@@ -1,0 +1,35 @@
+<?php
+
+return [
+    'page_title' => 'பயண வழிகாட்டி — Explore Laggala',
+    'badge_plan' => 'உங்கள் பயணத்தைத் திட்டமிடுங்கள்',
+    'hero_title' => 'லக்கல பயண வழிகாட்டி',
+    'hero_subtitle' => 'வருகை முறைகள், உள்ளூர் பழக்கவழக்கங்கள், பாதுகாப்பு ஆலோசனைகள் உள்ளிட்ட அத்தியாவசிய தகவல்கள்.',
+    'essential_reads' => 'முக்கிய வழிகாட்டிகள்',
+    'read_more' => 'மேலும் வாசிக்க →',
+    'all_guides' => 'அனைத்து பயண வழிகாட்டிகள்',
+    'no_guides' => 'பயண வழிகாட்டிகள் எதுவும் இல்லை',
+    'no_guides_desc' => 'விரைவில் வழிகாட்டிகள் சேர்க்கப்படும்.',
+    'quick_info' => 'விரைவு தகவல்',
+    'category' => 'வகை',
+    'author' => 'ஆசிரியர்',
+    'published' => 'வெளியிடப்பட்டது',
+    'related_guides' => 'தொடர்புடைய வழிகாட்டிகள்',
+    'back_to_all' => 'அனைத்து வழிகாட்டிகளுக்கும்',
+    'home' => 'முகப்பு',
+    'featured' => 'சிறப்பு',
+
+    // Categories
+    'cat_getting_here' => 'இங்கு வருவது எப்படி',
+    'cat_accommodation' => 'தங்குமிடம்',
+    'cat_food_drink' => 'உணவு & பானங்கள்',
+    'cat_safety_tips' => 'பாதுகாப்பு குறிப்புகள்',
+    'cat_cultural_etiquette' => 'கலாச்சார ஆசாரங்கள்',
+    'cat_packing_list' => 'பேக்கிங் பட்டியல்',
+    'cat_best_time_to_visit' => 'பார்வையிட சிறந்த நேரம்',
+    'cat_local_customs' => 'உள்ளூர் பழக்கவழக்கங்கள்',
+    'cat_transportation' => 'போக்குவரத்து',
+    'cat_money_budget' => 'பணம் & பட்ஜெட்',
+    'cat_health_medical' => 'சுகாதாரம் & மருத்துவம்',
+    'cat_general' => 'பொது வழிகாட்டி',
+];

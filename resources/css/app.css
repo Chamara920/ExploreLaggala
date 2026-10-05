@@ -1,0 +1,40 @@
+@import 'bootstrap/dist/css/bootstrap.min.css';
+@import 'bootstrap-icons/font/bootstrap-icons.css';
+@import '@fortawesome/fontawesome-free/css/all.min.css';
+@import 'leaflet/dist/leaflet.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.quill-editor {
+    min-height: 250px;
+}
+
+.quill-editor .ql-editor {
+    min-height: 250px;
+    font-size: 16px;
+}
+
+.dark .ql-toolbar {
+    background: #1f2937;
+    border-color: #4b5563;
+}
+
+.dark .ql-container {
+    background: #111827;
+    border-color: #4b5563;
+    color: #f9fafb;
+}
+
+.dark .ql-stroke {
+    stroke: #e5e7eb;
+}
+
+.dark .ql-fill {
+    fill: #e5e7eb;
+}
+
+.dark .ql-picker {
+    color: #e5e7eb;
+}

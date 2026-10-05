@@ -1,0 +1,35 @@
+<?php
+
+return [
+    'page_title' => 'සංචාරක මාර්ගෝපදේශය — Explore Laggala',
+    'badge_plan' => 'ඔබේ සංචාරය සැලසුම් කරන්න',
+    'hero_title' => 'ලග්ගල සංචාරක මාර්ගෝපදේශය',
+    'hero_subtitle' => 'පැමිණීමේ මාර්ග, ප්‍රාදේශීය සිරිත් විරිත්, ඇසුරුම් සහ ආරක්ෂණ උපදෙස් ඇතුළු ඔබගේ සංචාරය සඳහා අත්‍යවශ්‍ය සියලුම තොරතුරු.',
+    'essential_reads' => 'අත්‍යවශ්‍ය කියවීම්',
+    'read_more' => 'තව කියවන්න →',
+    'all_guides' => 'සියලු සංචාරක මාර්ගෝපදේශ',
+    'no_guides' => 'තවමත් සංචාරක මාර්ගෝපදේශ නොමැත',
+    'no_guides_desc' => 'කණ්ඩායම විසින් ළඟදීම මාර්ගෝපදේශ එක් කරනු ඇත. පසුව නැවත පරීක්ෂා කරන්න!',
+    'quick_info' => 'කෙටි තොරතුරු',
+    'category' => 'කාණ්ඩය',
+    'author' => 'කර්තෘ',
+    'published' => 'ප්‍රකාශිත දිනය',
+    'related_guides' => 'අදාළ මාර්ගෝපදේශ',
+    'back_to_all' => 'සියලු මාර්ගෝපදේශ වෙත',
+    'home' => 'මුල් පිටුව',
+    'featured' => 'විශේෂාංගගත',
+
+    // Categories
+    'cat_getting_here' => 'පැමිණීමේ මාර්ග',
+    'cat_accommodation' => 'නවාතැන් පහසුකම්',
+    'cat_food_drink' => 'ආහාර සහ පාන',
+    'cat_safety_tips' => 'ආරක්ෂිත උපදෙස්',
+    'cat_cultural_etiquette' => 'සංස්කෘතික ආචාරධර්ම',
+    'cat_packing_list' => 'අත්‍යවශ්‍ය බඩු ලැයිස්තුව',
+    'cat_best_time_to_visit' => 'සංචාරයට සුදුසුම කාලය',
+    'cat_local_customs' => 'ප්‍රාදේශීය සිරිත් විරිත්',
+    'cat_transportation' => 'ප්‍රවාහනය',
+    'cat_money_budget' => 'මුදල් සහ අයවැය',
+    'cat_health_medical' => 'සෞඛ්‍ය සහ වෛද්‍ය',
+    'cat_general' => 'සාමාන්‍ය මාර්ගෝපදේශ',
+];

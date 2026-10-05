@@ -1,0 +1,75 @@
+<?php
+
+return [
+    'main_title' => 'Stay & Eat in Laggala',
+    'main_subtitle' => 'Experience authentic Knuckles hospitality, cosy mountain stays, flavoursome traditional meals, and unique dining amidst wilderness.',
+    'badge' => 'Accommodation & Food Guide',
+
+    'sections' => [
+        'accommodation' => 'Accommodation',
+        'restaurants_cafes' => 'Restaurants & Cafés',
+        'local_food' => 'Local Food & Flavours',
+        'outdoor_dining' => 'Outdoor Dining & Catering',
+    ],
+
+    'section_subtitles' => [
+        'accommodation' => 'Find the perfect place to rest—from luxury eco resorts and cosy villas to rustic village homestays and riverside camping sites.',
+        'restaurants_cafes' => 'Taste delicious meals, relax at scenic hillside cafés, and enjoy warm family dining and quick takeaways in Laggala.',
+        'local_food' => 'Indulge in authentic Sri Lankan village culinary traditions, stone-ground herbal drinks, spicy curries, and sweet delicacies.',
+        'outdoor_dining' => 'Elevate your journey with scenic wilderness picnic spreads, campfire catering, and bespoke group dining across the Knuckles region.',
+    ],
+
+    // Details labels
+    'price_range' => 'Price Range',
+    'contact' => 'Contact & Inquiries',
+    'phone' => 'Phone',
+    'email' => 'Email',
+    'website' => 'Website / Booking',
+    'visit_website' => 'Visit Website / Book',
+    'call_now' => 'Call Now',
+    'opening_hours' => 'Hours / Check-in',
+    'location' => 'Location',
+    'coordinates' => 'Coordinates',
+    'open_in_maps' => 'Open in Google Maps',
+    'view_on_map' => 'Location on Map',
+    'photos_gallery' => 'Photo Gallery',
+    'photo_slider_hint' => 'Browse photos of this place',
+
+    // Listings & Filtering
+    'search_placeholder' => 'Search places, food, locations or keywords...',
+    'all_types' => 'All Categories',
+    'categories' => 'Categories',
+    'sort_by' => 'Sort By',
+    'sort_default' => 'Recommended',
+    'sort_rating' => 'Highest Rated',
+    'sort_newest' => 'Newest',
+    'no_places_found' => 'No places found matching your search.',
+    'try_adjusting' => 'Try changing your search keywords or resetting filters.',
+    'reset_filters' => 'Reset Filters',
+    'view_details' => 'View Details',
+    'featured_badge' => 'Featured',
+    'total_places' => 'Total Places',
+    'back_to_section' => 'Back to :section',
+    'back_to_hub' => 'Back to Stay & Eat Hub',
+    'related_places' => 'Similar Places You Might Like',
+
+    // Reviews & Ratings
+    'reviews_title' => 'Guest Reviews & Ratings',
+    'no_reviews' => 'No reviews yet. Be the first to share your experience!',
+    'write_review' => 'Share Your Experience',
+    'your_review' => 'Your Review',
+    'rate_place' => 'Rate your experience (1 to 5 stars)',
+    'review_comment_placeholder' => 'Write your honest review, food highlights, service quality, or tips for future guests...',
+    'submit_review' => 'Submit Review',
+    'update_review' => 'Update Review',
+    'delete_review' => 'Delete Review',
+    'confirm_delete_review' => 'Are you sure you want to permanently delete this review?',
+    'pending_approval_badge' => 'Pending Approval',
+    'approved_badge' => 'Verified Review',
+    'login_to_review' => 'Please log in to submit a rating and comment.',
+    'login_now' => 'Log In Now',
+    'review_submitted' => 'Thank you! Your review has been submitted and is awaiting administrator approval.',
+    'review_updated' => 'Your review has been updated and is awaiting administrator approval.',
+    'review_published' => 'Your review has been published.',
+    'review_deleted' => 'Review successfully removed.',
+];
