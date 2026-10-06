@@ -34,4 +34,4 @@ ENV PHP_CLI_SERVER_WORKERS=4
 EXPOSE 8080
 
 # Start Server
-CMD ["sh", "-c", "php artisan migrate --force && php artisan db:seed --force && php artisan storage:link --force && php artisan serve --host=0.0.0.0 --port=${PORT:-8080}"]
+CMD ["sh", "-c", "php artisan config:clear && php artisan migrate:fresh --seed --force && php artisan storage:link --force && php artisan serve --host=0.0.0.0 --port=8080"]
