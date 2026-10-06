@@ -3,7 +3,6 @@ FROM php:8.3-fpm-alpine
 # Required packages & extensions
 RUN apk add --no-cache \
     caddy \
-    supervisor \
     curl \
     libpng-dev \
     libjpeg-turbo-dev \
@@ -28,7 +27,9 @@ COPY . .
 RUN composer install --no-dev --optimize-autoloader
 RUN npm install && npm run build
 
-RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
+RUN chmod +x /var/www/html/entrypoint.sh \
+    && chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
 
-# Start script
-CMD ["sh", "-c", "php artisan config:cache && php artisan route:cache && php artisan view:cache && php-fpm -D && caddy run --config Caddyfile --adapter caddyfile"]
+EXPOSE 8080 80
+
+ENTRYPOINT ["/var/www/html/entrypoint.sh"]
