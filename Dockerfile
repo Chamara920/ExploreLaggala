@@ -37,5 +37,8 @@ RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cac
 
 EXPOSE 80
 
-# Start script
-CMD php artisan serve --host=0.0.0.0 --port=$PORT
+# Entrypoint එක කොපි කිරීම සහ Permissions දීම
+COPY entrypoint.sh /usr/local/bin/entrypoint.sh
+RUN chmod +x /usr/local/bin/entrypoint.sh
+
+ENTRYPOINT ["entrypoint.sh"]
