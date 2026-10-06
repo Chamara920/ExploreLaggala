@@ -1,1 +1,0 @@
-web: /var/www/html/entrypoint.sh
