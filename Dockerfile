@@ -1,35 +1,31 @@
-FROM php:8.3-fpm-alpine
+FROM php:8.3-cli-alpine
 
-# Required packages & extensions
+# Install required PHP extensions
 RUN apk add --no-cache \
-    caddy \
-    curl \
-    libpng-dev \
-    libjpeg-turbo-dev \
-    freetype-dev \
+    icu-dev \
     libzip-dev \
-    zip \
-    unzip \
-    git \
+    libpng-dev \
+    freetype-dev \
+    libjpeg-turbo-dev \
     nodejs \
     npm \
-    icu-dev \
-    oniguruma-dev
+    git \
+    unzip
 
 RUN docker-php-ext-configure gd --with-freetype --with-jpeg \
-    && docker-php-ext-install pdo pdo_mysql gd zip bcmath intl opcache
+    && docker-php-ext-install pdo pdo_mysql gd zip bcmath intl
 
+# Install Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
-WORKDIR /var/www/html
+WORKDIR /app
 COPY . .
 
-RUN composer install --no-dev --optimize-autoloader
+# Install Packages and Build Assets
+RUN composer install --no-dev --optimize-autoloader --ignore-platform-reqs
 RUN npm install && npm run build
 
-RUN chmod +x /var/www/html/entrypoint.sh \
-    && chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
+EXPOSE 8080
 
-EXPOSE 8080 80
-
-ENTRYPOINT ["/var/www/html/entrypoint.sh"]
+# Start Server
+CMD ["sh", "-c", "php artisan migrate --force && php artisan db:seed --force && php artisan storage:link --force && php artisan serve --host=0.0.0.0 --port=8080"]
