@@ -1,8 +1,8 @@
 FROM php:8.3-fpm-alpine
 
-# Required system packages and PHP extensions
+# Required packages & extensions
 RUN apk add --no-cache \
-    nginx \
+    caddy \
     supervisor \
     curl \
     libpng-dev \
@@ -20,25 +20,15 @@ RUN apk add --no-cache \
 RUN docker-php-ext-configure gd --with-freetype --with-jpeg \
     && docker-php-ext-install pdo pdo_mysql gd zip bcmath intl opcache
 
-# Get Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 WORKDIR /var/www/html
-
-# Copy project files
 COPY . .
 
-# Install PHP and Node dependencies
 RUN composer install --no-dev --optimize-autoloader
 RUN npm install && npm run build
 
-# Set permissions
 RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
 
-EXPOSE 80
-
-# Entrypoint එක කොපි කිරීම සහ Permissions දීම
-COPY entrypoint.sh /usr/local/bin/entrypoint.sh
-RUN chmod +x /usr/local/bin/entrypoint.sh
-
-ENTRYPOINT ["entrypoint.sh"]
+# Start script
+CMD ["sh", "-c", "php artisan config:cache && php artisan route:cache && php artisan view:cache && php-fpm -D && caddy run --config Caddyfile --adapter caddyfile"]
