@@ -12,43 +12,51 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('explore_categories', function (Blueprint $table) {
-            $table->string('name')->nullable()->after('slug');
-            $table->string('type')->default('culture-heritage')->after('name');
-            $table->index('type');
+            if (! Schema::hasColumn('explore_categories', 'name')) {
+                $table->string('name')->nullable()->after('slug');
+            }
+            if (! Schema::hasColumn('explore_categories', 'type')) {
+                $table->string('type')->default('culture-heritage')->after('name');
+                $table->index('type');
+            }
         });
 
         Schema::table('explore_items', function (Blueprint $table) {
-            $table->string('type')->default('culture-heritage')->after('id');
+            if (! Schema::hasColumn('explore_items', 'type')) {
+                $table->string('type')->default('culture-heritage')->after('id');
+                $table->index('type');
+            }
             $table->foreignId('category_id')->nullable()->change();
-            $table->index('type');
         });
 
-        Schema::create('explore_item_reviews', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('explore_item_id')
-                ->constrained('explore_items')
-                ->cascadeOnDelete();
-            $table->foreignId('user_id')
-                ->constrained('users')
-                ->cascadeOnDelete();
-            $table->unsignedTinyInteger('rating');
-            $table->text('comment')->nullable();
-            $table->string('status')->default('pending');
-            $table->text('admin_note')->nullable();
-            $table->foreignId('reviewed_by')
-                ->nullable()
-                ->constrained('users')
-                ->nullOnDelete();
-            $table->timestamp('reviewed_at')->nullable();
-            $table->timestamps();
+        if (! Schema::hasTable('explore_item_reviews')) {
+            Schema::create('explore_item_reviews', function (Blueprint $table) {
+                $table->id();
+                $table->foreignId('explore_item_id')
+                    ->constrained('explore_items')
+                    ->cascadeOnDelete();
+                $table->foreignId('user_id')
+                    ->constrained('users')
+                    ->cascadeOnDelete();
+                $table->unsignedTinyInteger('rating');
+                $table->text('comment')->nullable();
+                $table->string('status')->default('pending');
+                $table->text('admin_note')->nullable();
+                $table->foreignId('reviewed_by')
+                    ->nullable()
+                    ->constrained('users')
+                    ->nullOnDelete();
+                $table->timestamp('reviewed_at')->nullable();
+                $table->timestamps();
 
-            $table->unique(
-                ['explore_item_id', 'user_id'],
-                'explore_item_user_review_unique'
-            );
-            $table->index('status');
-            $table->index('rating');
-        });
+                $table->unique(
+                    ['explore_item_id', 'user_id'],
+                    'explore_item_user_review_unique'
+                );
+                $table->index('status');
+                $table->index('rating');
+            });
+        }
     }
 
     /**
