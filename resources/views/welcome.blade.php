@@ -345,7 +345,7 @@
                     'text' => __('home.quick_destinations_text'),
                     'icon' => 'bi-signpost-2',
                     'badge' => __('home.quick_destinations_badge'),
-                    'image' => 'https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=700&q=85',
+                    'image' => asset('images/quick-cards/destinations.jpg'),
                     'url' => route('explore.destinations.index'),
                 ],
                 [
@@ -353,7 +353,7 @@
                     'text' => __('home.quick_map_text'),
                     'icon' => 'bi-map',
                     'badge' => __('home.quick_map_badge'),
-                    'image' => 'https://images.unsplash.com/photo-1524666041070-9e7b5f2b8c31?auto=format&fit=crop&w=700&q=85',
+                    'image' => asset('images/quick-cards/interactive-map.jpg'),
                     'url' => route('explore.map'),
                 ],
                 [
@@ -361,7 +361,7 @@
                     'text' => __('home.quick_culture_text'),
                     'icon' => 'bi-bank',
                     'badge' => __('home.quick_culture_badge'),
-                    'image' => 'https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=700&q=85',
+                    'image' => asset('images/quick-cards/culture-heritage.jpg'),
                     'url' => route('explore.culture-heritage.index'),
                 ],
                 [
@@ -369,7 +369,7 @@
                     'text' => __('home.quick_outdoor_text'),
                     'icon' => 'bi-tree',
                     'badge' => __('home.quick_outdoor_badge'),
-                    'image' => 'https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=700&q=85',
+                    'image' => asset('images/quick-cards/outdoor-adventure.jpg'),
                     'url' => route('explore.outdoor-adventure.index'),
                 ],
                 [
@@ -377,7 +377,7 @@
                     'text' => __('home.quick_safety_text'),
                     'icon' => 'bi-shield-check',
                     'badge' => __('home.quick_safety_badge'),
-                    'image' => 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=700&q=85',
+                    'image' => asset('images/quick-cards/travel-safety.jpg'),
                     'url' => route('plan.weather.index'),
                 ],
                 [
@@ -385,7 +385,7 @@
                     'text' => __('home.quick_emergency_text'),
                     'icon' => 'bi-telephone-fill',
                     'badge' => __('home.quick_emergency_badge'),
-                    'image' => 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=700&q=85',
+                    'image' => asset('images/quick-cards/emergency-contacts.jpg'),
                     'url' => route('emergency.contacts'),
                 ],
             ];

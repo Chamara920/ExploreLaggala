@@ -89,6 +89,7 @@
         "sort-packages": true,
         "platform-check": false,
         "platform": {
+            "php": "8.3.14",
             "ext-intl": "8.3",
             "ext-zip": "1.2"
         },

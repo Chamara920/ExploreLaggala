@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('sub_category', 100)->nullable()->index(); // e.g. hospital, clinic, pharmacy / supermarket, hardware / bank, atm / petrol, ev_charging / school, college
             $table->string('status', 20)->default('published')->index();
             $table->boolean('featured')->default(false)->index();
-            
+
             // Single photo constraint
             $table->string('image_path')->nullable();
 

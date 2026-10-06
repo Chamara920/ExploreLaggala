@@ -405,6 +405,15 @@ Route::get('/about', [PagesController::class, 'about'])->name('pages.about');
 Route::get('/contributor-guidelines', [PagesController::class, 'contributorGuidelines'])->name('pages.contributor-guidelines');
 Route::get('/contributors', [ContributorsController::class, 'index'])->name('pages.contributors');
 
+// Remote Storage Redirect Fallback (when media is hosted on external cloud storage)
+Route::get('/storage/{path}', function (string $path) {
+    $mediaUrl = config('filesystems.media_url');
+    if (! empty($mediaUrl)) {
+        return redirect()->away(rtrim($mediaUrl, '/').'/'.ltrim($path, '/'), 301);
+    }
+    abort(404);
+})->where('path', '.*');
+
 Route::fallback(function () {
     return view('welcome');
 });

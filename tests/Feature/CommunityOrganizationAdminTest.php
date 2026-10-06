@@ -2,10 +2,12 @@
 
 namespace Tests\Feature;
 
+use App\Filament\Resources\CommunityOrganizations\Pages\CreateCommunityOrganization;
 use App\Models\CommunityOrganization;
 use App\Models\OrganizationType;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Livewire\Livewire;
 use Spatie\Permission\Models\Role;
 use Tests\TestCase;
 
@@ -67,8 +69,8 @@ class CommunityOrganizationAdminTest extends TestCase
             'is_active' => true,
         ]);
 
-        \Livewire\Livewire::actingAs($admin)
-            ->test(\App\Filament\Resources\CommunityOrganizations\Pages\CreateCommunityOrganization::class)
+        Livewire::actingAs($admin)
+            ->test(CreateCommunityOrganization::class)
             ->fillForm([
                 'type_id' => $type->id,
                 'status' => 'draft',

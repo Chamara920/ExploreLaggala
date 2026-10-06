@@ -1,15 +1,16 @@
 <?php
-require __DIR__ . '/../vendor/autoload.php';
-$app = require_once __DIR__ . '/../bootstrap/app.php';
-$kernel = $app->make(Illuminate\Contracts\Console\Kernel::class);
+
+require __DIR__.'/../vendor/autoload.php';
+$app = require_once __DIR__.'/../bootstrap/app.php';
+$kernel = $app->make(Kernel::class);
 $kernel->bootstrap();
 
-use App\Models\User;
-use App\Models\Destination;
 use App\Models\MobileCoverageReport;
 use App\Models\MobileCoverageReportTranslation;
+use App\Models\User;
+use Illuminate\Contracts\Console\Kernel;
 
-$admin = User::whereHas('roles', fn($q) => $q->whereIn('name', ['admin', 'super_admin']))->first()
+$admin = User::whereHas('roles', fn ($q) => $q->whereIn('name', ['admin', 'super_admin']))->first()
     ?? User::first()
     ?? User::factory()->create(['name' => 'Laggala Admin', 'email' => 'admin@laggala.local']);
 
@@ -313,4 +314,4 @@ foreach ($seedData as $item) {
     }
 }
 
-echo "Successfully seeded " . count($seedData) . " mobile coverage reports with EN, SI, TA translations!\n";
+echo 'Successfully seeded '.count($seedData)." mobile coverage reports with EN, SI, TA translations!\n";
