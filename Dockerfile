@@ -38,4 +38,4 @@ RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cac
 EXPOSE 80
 
 # Start script
-CMD ["sh", "-c", "php artisan serve --host=0.0.0.0 --port=80"]
+CMD php artisan serve --host=0.0.0.0 --port=$PORT
